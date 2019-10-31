@@ -1,4 +1,9 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <% if notice %>
+      <div class="alert alert-primary">
+        <p id="notice"><%= notice %></p>
+      </div>
+  <% end %>
 
 <p>
   <strong>Name:</strong>
@@ -22,3 +27,4 @@
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>
+</div>

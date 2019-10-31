@@ -1,5 +1,9 @@
 <div class="container">
-<p id="notice"><%= notice %></p>
+<% if notice %>
+<div class="alert alert-success">
+  <p id="notice"><%= notice %></p>
+</div>
+<% end %>
 
 <h1>Customers</h1>
 <%= link_to 'Blacklist', blacklist_path %>
