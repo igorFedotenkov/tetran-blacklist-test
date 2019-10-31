@@ -1,0 +1,35 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<h1>Customers</h1>
+<%= link_to 'Blacklist', blacklist_path %>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Description</th>
+    <th colspan="4">Actions</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.phone %></td>
+        <td><%= customer.description %></td>
+        <td><%= link_to 'Show', customer %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Add to Blacklist', set_blacklist_customer_path(customer), data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Customer', new_customer_path %> <br/>
+</div>
